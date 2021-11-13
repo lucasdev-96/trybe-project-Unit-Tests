@@ -84,14 +84,22 @@ const createMenu = (object) => {
     fetchMenu: () => object,
     consumption: [],
   };
+  const allValues = object1.consumption;
+
+    console.log(allValues);
   return object1;
 };
 
 const addConsumption = createMenu();
 
 const addInArray = (add) => {
-  addConsumption.consumption.push(add);
-  addConsumption.order = add;
+  let adiciona = addConsumption.order;
+  adiciona = add;
+  const b = addConsumption.consumption;
+  for (let index = 0; index < b.length; index += 1) {
+    b[index].push(adiciona);
+  }
+  console.log(addConsumption.consumption);
 };
 module.exports = createMenu;
-addInArray();
+addInArray('ba');
